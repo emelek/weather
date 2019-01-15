@@ -27,8 +27,7 @@ for loc in geolocation:
     js_code += '{lat: %s, lng: %s},\n' % (loc[0], loc[1])
 js_code=js_code[0:-2]
 print(js_code)
-html = open('points&lines.html')
-html = html.replace('/* PLACEHOLDER */', js_code)
-f = open('points&lines.html', 'w')
+html = open('points_lines.html','r').read().replace('/* PLACEHOLDER */', js_code)
+f = open('points_lines.html', 'w')
 f.write(html)
 f.close()
